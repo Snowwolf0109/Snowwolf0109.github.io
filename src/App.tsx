@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { CloudShader } from "@/components/ui/cloud-shader";
+import { SocialProof1 } from "@/components/social-proof-1";
 
 /* ─── Inline SVGs ─── */
 const Arrow = () => (
@@ -427,40 +428,12 @@ export default function App() {
               </a>
             </div>
 
-            {/* Enterprise Collaborations Strip — baby blue frosted glass pill */}
+            {/* Enterprise Collaborations Ribbon — Social Proof 1 Block */}
             <div
-              className="fade-up fade-up-delay-4 mt-12 pt-6 max-w-xl mx-auto px-3"
+              className="fade-up fade-up-delay-4 mt-12 pt-6 max-w-3xl sm:max-w-4xl mx-auto px-3"
               style={{ borderTop: "1px solid rgba(255, 255, 255, 0.35)" }}
             >
-              <div
-                className="inline-flex flex-col items-center justify-center gap-2.5 px-5 sm:px-8 py-3.5 rounded-2xl backdrop-blur-md max-w-full"
-                style={{
-                  background: "rgba(224, 242, 254, 0.75)",
-                  border: "1px solid rgba(186, 230, 253, 0.7)",
-                  boxShadow: "0 8px 30px rgba(12, 74, 110, 0.08)",
-                }}
-              >
-                <p
-                  className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.18em] sm:tracking-[0.22em] text-center"
-                  style={{ color: "#0369a1" }}
-                >
-                  Enterprise Hardware & Solution Engagements
-                </p>
-                <div
-                  className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-6 text-[12px] sm:text-[13px] font-bold tracking-wider"
-                  style={{ color: "#0c4a6e" }}
-                >
-                  <span>INTEL</span>
-                  <span style={{ color: "rgba(3, 105, 161, 0.4)" }}>·</span>
-                  <span>DELL</span>
-                  <span style={{ color: "rgba(3, 105, 161, 0.4)" }}>·</span>
-                  <span>LENOVO</span>
-                  <span style={{ color: "rgba(3, 105, 161, 0.4)" }}>·</span>
-                  <span>HUAWEI</span>
-                  <span style={{ color: "rgba(3, 105, 161, 0.4)" }}>·</span>
-                  <span>HONOR</span>
-                </div>
-              </div>
+              <SocialProof1 />
             </div>
           </div>
         </div>
@@ -552,8 +525,41 @@ export default function App() {
 
 
       {/* ══════════════ SELECTED WORK / PROJECTS ══════════════ */}
-      <section id="work" className="section-pad" style={{ background: "var(--surface-alt)" }}>
-        <div className="site-container">
+      <section id="work" className="relative section-pad overflow-hidden">
+        {/* Daisy Image Background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img
+            src="/Daisy.jpg"
+            alt="Daisy meadow background"
+            className="w-full h-full object-cover object-center"
+            style={{ opacity: 0.88 }}
+          />
+          {/* Soft scrim overlay to preserve crisp card readability */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(250, 250, 248, 0.45) 0%, rgba(250, 250, 248, 0.25) 50%, rgba(250, 250, 248, 0.45) 100%)",
+            }}
+          />
+          {/* Seamless blending at section boundaries */}
+          <div
+            className="absolute top-0 left-0 right-0 h-24 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, var(--surface) 0%, transparent 100%)",
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to top, var(--surface) 0%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 site-container">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
             <div>
               <p className="section-badge">02 / Portfolio</p>
@@ -566,7 +572,15 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project) => (
-              <div key={project.title} className="card flex flex-col justify-between">
+              <div
+                key={project.title}
+                className="card backdrop-blur-md flex flex-col justify-between"
+                style={{
+                  background: "rgba(255, 255, 255, 0.92)",
+                  border: "1px solid rgba(255, 255, 255, 0.85)",
+                  boxShadow: "0 10px 30px rgba(12, 74, 110, 0.08)",
+                }}
+              >
                 <div>
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div>
@@ -606,8 +620,40 @@ export default function App() {
 
 
       {/* ══════════════ CAREER JOURNEY / EXPERIENCE ══════════════ */}
-      <section id="experience" className="section-pad">
-        <div className="site-container">
+      <section id="experience" className="relative section-pad overflow-hidden">
+        {/* Animated Sky Canvas */}
+        <div className="absolute inset-0 pointer-events-none">
+          <CloudShader
+            speed={0.5}
+            count={5}
+            cloudColor="#ffffff"
+            skyTopColor="#3a7ec2"
+            skyBottomColor="#a8d3f2"
+            className="h-full w-full"
+          />
+          {/* Subtle contrast scrim for crystal-clear readability */}
+          <div
+            className="absolute inset-0"
+            style={{ background: "rgba(255, 255, 255, 0.42)" }}
+          />
+          {/* Smooth blend gradients at the top and bottom of the section */}
+          <div
+            className="absolute top-0 left-0 right-0 h-28 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, var(--surface) 0%, rgba(250, 250, 248, 0.6) 50%, transparent 100%)",
+            }}
+          />
+          <div
+            className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to top, var(--surface-alt) 0%, rgba(245, 245, 242, 0.6) 50%, transparent 100%)",
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 site-container">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
             <div>
               <p className="section-badge">03 / Experience</p>
@@ -622,7 +668,15 @@ export default function App() {
             {experience.map((exp) => (
               <div key={exp.role + exp.period} className="timeline-track">
                 <div className="timeline-node" />
-                <div className="card" style={{ padding: "1.75rem 2rem" }}>
+                <div
+                  className="card backdrop-blur-md"
+                  style={{
+                    padding: "1.75rem 2rem",
+                    background: "rgba(255, 255, 255, 0.92)",
+                    border: "1px solid rgba(255, 255, 255, 0.8)",
+                    boxShadow: "0 10px 30px rgba(12, 74, 110, 0.08)",
+                  }}
+                >
                   <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2.5 flex-wrap">
                       <h3 className="text-[17px] font-medium" style={{ color: "var(--ink)" }}>
